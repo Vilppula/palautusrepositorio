@@ -41,6 +41,20 @@ class UserService:
             raise UserInputError("Username and password are required")
 
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        if len(username) < 3:
+            raise AuthenticationError("Username was too short")
+        
+        if not username.isalpha():
+            raise AuthenticationError("Username should contain  only letters a-z/ A-Z")
+
+        if password.isalpha():
+            raise AuthenticationError("Password should not contain only letters")
+
+        if len(password) < 8:
+            raise AuthenticationError("Password must be at least 8 character long")
+
+        if password != password_confirmation:
+            raise AuthenticationError("You entered two different passwords")
 
 
 user_service = UserService()

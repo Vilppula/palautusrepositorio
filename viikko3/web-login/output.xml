@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.13 on linux)" generated="20231116 11:48:14.946" rpa="false" schemaversion="4">
+<suite id="s1" name="Src" source="/mydir/src">
+<suite id="s1-s1" name="Tests" source="/mydir/src/tests">
+<suite id="s1-s1-s1" name="Login" source="/mydir/src/tests/login.robot">
+<kw name="Open And Configure Browser" library="resource" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231116 11:48:15.100" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f0c250e7b50&gt;</msg>
+<status status="PASS" starttime="20231116 11:48:15.100" endtime="20231116 11:48:15.100"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=chrome</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231116 11:48:15.100" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg timestamp="20231116 11:48:41.951" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20231116 11:48:41.951" level="FAIL">WebDriverException: Message: Service /root/.cache/selenium/chromedriver/linux64/119.0.6045.105/chromedriver unexpectedly exited. Status code was: 127
+</msg>
+<status status="FAIL" starttime="20231116 11:48:15.100" endtime="20231116 11:48:41.952"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="NOT RUN" starttime="20231116 11:48:41.952" endtime="20231116 11:48:41.952"/>
+</kw>
+<status status="FAIL" starttime="20231116 11:48:15.099" endtime="20231116 11:48:41.952"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Login With Correct Credentials" line="8">
+<status status="FAIL" starttime="20231116 11:48:41.952" endtime="20231116 11:48:41.953">Parent suite setup failed:
+WebDriverException: Message: Service /root/.cache/selenium/chromedriver/linux64/119.0.6045.105/chromedriver unexpectedly exited. Status code was: 127
+</status>
+</test>
+<test id="s1-s1-s1-t2" name="Login With Incorrect Password" line="14">
+<status status="FAIL" starttime="20231116 11:48:41.953" endtime="20231116 11:48:41.954">Parent suite setup failed:
+WebDriverException: Message: Service /root/.cache/selenium/chromedriver/linux64/119.0.6045.105/chromedriver unexpectedly exited. Status code was: 127
+</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231116 11:48:41.954" endtime="20231116 11:48:41.954"/>
+</kw>
+<status status="FAIL" starttime="20231116 11:48:14.965" endtime="20231116 11:48:41.954">Suite setup failed:
+WebDriverException: Message: Service /root/.cache/selenium/chromedriver/linux64/119.0.6045.105/chromedriver unexpectedly exited. Status code was: 127
+</status>
+</suite>
+<status status="FAIL" starttime="20231116 11:48:14.963" endtime="20231116 11:48:41.955"/>
+</suite>
+<status status="FAIL" starttime="20231116 11:48:14.947" endtime="20231116 11:48:41.956"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Src">Src</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1" name="Tests">Src.Tests</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s1-s1" name="Login">Src.Tests.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

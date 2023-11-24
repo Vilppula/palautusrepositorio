@@ -1,4 +1,4 @@
-### Kahden esitellyn retrospektiivitekniikan kuvaus:
+### Kaksi esimerkkiä retrospektiivitekniikoista:
 
 #### Start, Stop, Continue, More, Less of Wheel:
 

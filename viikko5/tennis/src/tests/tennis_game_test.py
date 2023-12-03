@@ -55,6 +55,7 @@ def play_game(p1_points, p2_points):
 
 
 class TestTennis(unittest.TestCase):
+
     def test_score(self):
         for test_case in test_cases:
             (p1_points, p2_points, score) = test_case
